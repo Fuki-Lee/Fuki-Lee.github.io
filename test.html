@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body,html{
+				width: 100%;
+				height: 100%;
+			}
+			header{
+				width: 100%;
+				height: 180px;
+			}
+			header li{
+				list-style: none;
+			}
+			header a{
+				font-size: 12px;
+				color: #555;
+				text-decoration: none;
+				text-align: center;
+				line-height: 30px;
+			}
+			header>.head_top{
+				width: 100%;
+				height: 30px;
+				border-bottom: 1px solid rgb(221,221,221);
+			}
+			header>.head_top>.head_top_container{
+				width: 80%;
+				height: 29px;
+				margin:0px  auto;
+				background: floralwhite;
+				font-size: 12px;
+				min-width: 1300px;
+				position: relative;
+			}
+			header>.head_top>.head_top_container>.head_top_left{
+				/* width: 30%; */
+				height: 30px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background-color: pink;
+			}
+			header>.head_top>.head_top_container>.head_top_left>li{
+				float: left;
+				margin: 0px 5px;
+			}
+			header>.head_top>.head_top_container>.head_top_left>li::before{
+				content: "";
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background-image: url(img/03_alibar.png);
+				background-repeat: no-repeat;
+				background-size: 15px auto;
+				position: relative;
+				top: 3px;
+				right: 0px;
+			}
+			header>.head_top>.head_top_container>.head_top_left>li:nth-of-type(1)::before{
+				background-position: 2px -106px;
+			}
+			header>.head_top>.head_top_container>.head_top_left>li:nth-of-type(2)>a{
+				cursor: text;
+				text-decoration: none;
+			}
+			header>.head_top>.head_top_container>.head_top_left>li:nth-of-type(2)::before{
+				background-position: -8px -132px;
+				margin-right: 5px;
+				height: 16px;
+			}
+			header>.head_top>.head_top_container>.head_top_left>li:nth-of-type(3)::before{
+				background-image: url(img/03_redpack.png);
+				background-size: auto 15px;
+				background-position: 3px;
+				margin-left: 8px;
+				margin-right: 2px;
+			}
+			header>.head_top>.head_top_container>.head_top_left>li:nth-of-type(4)::before{
+				background-image: none;
+				width: 5px;
+				height: 15px;
+			}
+			
+			header>.head_top>.head_top_container>.head_top_right{
+				/* display: inline-block; */
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				height: 0px;
+				/* width: 65%; */
+				height: 30px;
+			}
+			header>.head_top>.head_top_container>.head_top_right>li{
+				float: left;
+				background: rgb(221,221,221);
+			}
+			header>.head_top>.head_top_container>.head_top_right>li>a{
+				height: 25px;
+				padding: 3px 8px;
+				border-left: 1px solid black;
+				border-right: 1px solid rbga(0,0,0,0);
+			}
+			header>.head_top>.head_top_container>.head_top_right>li:hover>a::after{
+				background-position: 0px -30px;
+			}
+			header>.head_top>.head_top_container>.head_top_right>li>a::after{
+				content: "";
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background-image: url(img/03_arrow.png);
+				background-repeat: no-repeat;
+				background-size: 7px auto;
+				background-position: 0px 9px;
+				position: relative;
+				top: 0px;
+				left: 3px;
+			}
+			header>.head_top>.head_top_container>.head_top_right>li:nth-of-type(1)>a{
+				border-left: none;
+			}
+			header>.head_top>.head_top_container>.head_top_right>li:nth-of-type(1)>a::after{
+				background-image: none;
+				width: 0px;
+				height: 0px;
+				border-left: none;
+			}
+			/* ==============我的阿里 下拉================== */
+			header>.head_top>.head_top_container>.head_top_right>.my_ali{
+				position: relative;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_ali>div{
+				background: white;
+				position: absolute;
+				top: 30px;
+				width: 350%;
+				border-left: 1px solid #dddddd;
+				border-right: 1px solid #dddddd;
+				border-bottom: 1px solid #dddddd;
+				display: none;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_ali:hover>div{
+				display: block;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_ali>div>.my_ali_list{
+				float: left;
+				padding: 3px 6px;
+				margin-left: 10px;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_ali>div>.my_ali_list>li:nth-of-type(1){
+				font-weight: bold;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_in_goods>a>span{
+				display: inline-block;
+				width: 15px;
+				height: 22px;
+				background-image: url(img/03_alibar.png);
+				background-repeat: no-repeat;
+				background-size: 15px auto;
+				background-position: 0px 2px;
+				position: relative;
+				top: -1px;
+				left: 0px;
+				text-align: center;
+				line-height: 18px;
+				color: white;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_in_goods:hover>.in_goods_list{
+				display: block;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_in_goods{
+				position: relative;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_in_goods>.in_goods_list{
+				background: #f6f6f6;
+				position: absolute;
+				top: 30px;
+				width: 500%;
+				height: 110px;
+				border-left: 1px solid #dddddd;
+				border-right: 1px solid #dddddd;
+				border-bottom: 1px solid #dddddd;
+				display: none;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_in_goods>.in_goods_list>p{
+				text-align: center;
+				font-size: 14px;
+				line-height: 60px;
+				color: #555;
+				background-color: white;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.my_in_goods>.in_goods_list>button{
+				position: absolute;
+				right: 15px;
+				bottom: 10px;
+				padding: 5px;
+				border: none;
+				background-color: #f60;
+				color: white;
+			}
+			
+			/* ==========================================nav========================================================= */
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav{
+				position: relative;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav>div{
+				background: white;
+				position: absolute;
+				top: 30px;
+				right: 0px;
+				width: 550%;
+				border-left: 1px solid #dddddd;
+				border-right: 1px solid #dddddd;
+				border-bottom: 1px solid #dddddd;
+				/* display: none; */
+			}
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav:hover>div{
+				display: block;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav>div>.head_top_webnav_list{
+				padding: 2px 6px;
+				margin-left: 10px;
+				width: 100%;
+			}
+			/* header>.head_top>.head_top_container>.head_top_right>.head_top_webnav>div>.head_top_webnav_list::after{
+				content: "";
+				display: block;
+				clear: both;
+			} */
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav>div>.head_top_webnav_list>dt{
+				font-weight: bolder;
+				float: left;
+				width: 15%;
+				position: relative;
+				top: 6px;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav>div>.head_top_webnav_list>dd{
+				float: left;
+				width: 83%;
+				position: relative;
+				right: 10px;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav>div>.head_top_webnav_list>dd>span{
+				display: inline-block;
+			}
+			header>.head_top>.head_top_container>.head_top_right>.head_top_webnav>div>.head_top_webnav_list>dd>span>a{
+				border-right: 1px solid black;
+				padding: 0px 9px;
+				height: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="head_top" style="background-color: papayawhip;">
+				<div class="head_top_container" >
+					<ul class="head_top_left">
+						<li><a href="#">手机阿里</a></li>
+						<li><a href="#">欢迎来到阿里巴巴</a></li>
+						<li><a href="#">请登录</a></li>
+						<li><a href="#">免费注册</a></li>
+					</ul>
+					<ul class="head_top_right">
+						<li><a href="#">1688首页</a></li>
+						<li class="my_ali">
+							<a href="#">我的阿里</a>
+							<div>
+								<ul class="my_ali_list">
+									<li><a href="">买家中心</a></li>
+									<li><a href="">已买到货品</a></li>
+									<li><a href="">优惠券</a></li>
+									<li><a href="">发布询价单</a></li>
+									<li><a href="">店铺动态</a></li>
+								</ul>
+								<ul class="my_ali_list">
+									<li><a href="">卖家中心</a></li>
+									<li><a href="">已卖出货品</a></li>
+									<li><a href="">发布供应产品</a></li>
+									<li><a href="">管理供应产品</a></li>
+									<li><a href="">管理旺铺</a></li>
+								</ul>
+								<ul class="my_ali_list">
+									<li><a href="">服务</a></li>
+									<li><a href="">开店装修</a></li>
+									<li><a href="">应用工具</a></li>
+									<li><a href="">运营服务</a></li>
+									<li><a href="">综合服务</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="my_in_goods">
+							<a href="#">进货单<span>0</span></a>
+							<div class="in_goods_list">
+								<p>进货单中暂未添加任何货品</p>
+								<button>查看进货单</button>
+							</div>
+						</li>
+						<li class="my_ali">
+							<a href="#">我的收藏</a>
+							<div style="width: 310%;">
+								<ul class="my_ali_list">
+									<li><a href="">货源</a></li>
+									<li><a href="">收藏的货品</a></li>
+									<li><a href="">铺货入淘的货品</a></li>
+									<li><a href="">铺货跨境ERP的货品</a></li>
+									<li><a href="">转发过的货品</a></li>
+									<li><a href="">浏览足迹</a></li>
+								</ul>
+								<ul class="my_ali_list">
+									<li><a href="">供应商</a></li>
+									<li><a href="">收藏的供应商</a></li>
+									<li><a href="">收藏的服务</a></li>
+									<li><a href="">交易过的供应商</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="my_ali">
+							<a href="#">入驻1688</a>
+							<div style="width: 200%;">
+								<ul class="my_ali_list">
+									<li><a href="">诚信通</a></li>
+									<li><a href="">立即开店</a></li>
+									<li><a href="">功能体验馆</a></li>
+									<li><a href="">新会员申请</a></li>
+									<li><a href="">老会员续费</a></li>
+									<li><a href="">会员活动</a></li>
+									<li><a href="">我的诚信通</a></li>
+								</ul>
+								<ul class="my_ali_list">
+									<li><a href="">厂货通</a></li>
+									<li><a href="">立即入驻</a></li>
+									<li><a href="">入驻要求</a></li>
+									<li><a href="">会员权益</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="my_ali">
+							<a href="#">实力商家</a>
+							<div style="width: 100%;">
+								<ul class="my_ali_list">
+									<li><a href="" style="font-weight: normal;">商家权益</a></li>
+									<li><a href="">成功案例</a></li>
+									<li><a href="">入驻要求</a></li>
+									<li><a href="">我要入驻</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="my_ali">
+							<a href="#">工业品牌</a>
+							<div style="width: 120%;">
+								<ul class="my_ali_list">
+									<li><a href="" style="font-weight: normal;">我要入驻</a></li>
+									<li><a href="">商家权益</a></li>
+									<li><a href="">品牌1+N建站</a></li>
+									<li><a href="">工业DT学院</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="my_ali">
+							<a href="#">我是供应商</a>
+							<div style="width: 100%;">
+								<ul class="my_ali_list">
+									<li><a href="" style="font-weight: normal;">成长中心</a></li>
+									<li><a href="">成功经验</a></li>
+									<li><a href="">热门活动</a></li>
+									<li><a href="">营销推广</a></li>
+									<li><a href="">本地服务</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="my_ali">
+							<a href="#">客服中心</a>
+							<div style="width: 100%;">
+								<ul class="my_ali_list">
+									<li><a href="" style="font-weight: normal;">买家客服</a></li>
+									<li><a href="">卖家客服</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="head_top_webnav">
+							<a href="#">网站导航</a>
+							<div>
+								<dl class="head_top_webnav_list">
+									<dt>行业市场</dt>
+									<dd>
+										<span><a href="">女装</a></span>
+										<span><a href="">男装</a></span>
+										<span><a href="">内衣</a></span>
+										<span><a href="">鞋靴</a></span>
+										<span><a href="">箱包</a></span>
+										<span><a href="">配饰</a></span>
+										<span><a href="">运动户外</a></span>
+										<span><a href="">母婴用品</a></span>
+										<span><a href="">童装</a></span>
+										<span><a href="">玩具</a></span>
+										<span><a href="">工艺品</a></span>
+										<span><a href="">宠物</a></span>
+										<span><a href="">园艺</a></span>
+										<span><a href="">日用百货</a></span>
+										<span><a href="">办公文教</a></span>
+										<span><a href="">汽车用品</a></span>
+										<span><a href="">食品饮料</a></span>
+										<span><a href="">餐饮生鲜</a></span>
+										<span><a href="">家纺家饰</a></span>
+										<span><a href="">家装建材</a></span>
+										<span><a href="">美容化妆</a></span>
+										<span><a href="">个护家清</a></span>
+										<span><a href="">3C</a></span>
+										<span><a href="">手机</a></span>
+										<span><a href="">家电</a></span>
+										<span><a href="">电工电气</a></span>
+										<span><a href="">照明</a></span>
+										<span><a href="">仪表</a></span>
+										<span><a href="">包装</a></span>
+										<span><a href="">印刷纸业</a></span>
+										<span><a href="">电子元器件</a></span>
+										<span><a href="">安防</a></span>
+										<span><a href="">机械设备</a></span>
+										<span><a href="">五金工具</a></span>
+										<span><a href="">劳保</a></span>
+										<span><a href="">橡塑原料</a></span>
+										<span><a href="">化工原料</a></span>
+										<span><a href="">精细化工</a></span>
+										<span><a href="">钢材</a></span>
+										<span><a href="">纺织皮革</a></span>
+									</dd>
+									<dt>特色市场</dt>
+									<dd>            
+										<span><a href="">淘货源</a></span>
+										<span><a href="">伙拼</a></span>
+										<span><a href="">微商进货</a></span>
+										<span><a href="">跨境专供</a></span>
+										<span><a href="">进口货源</a></span>
+										<span><a href="">工业品品牌站</a></span>
+										<span><a href="">源头好货</a></span>
+										<span><a href="">实力优品</a></span>
+										<span><a href="">产业带</a></span>
+										<span><a href="">企业汇采</a></span>
+										<span><a href="">超级店</a></span>
+									</dd>
+									<dt>采购平台</dt>
+									<dd>
+										<span><a href="">大企业采购</a></span>
+										<span><a href="">采购对接</a></span>
+									</dd>
+									<dt>以商会友</dt>
+									<dd>
+										<span><a href="">商友圈</a></span>
+										<span><a href="">生意经</a></span>
+										<span><a href="">1688商学院</a></span>
+									</dd>
+									<dt>常用工具</dt>
+									<dd>
+										<span><a href="">商家工作台</a></span>
+										<span><a href="">手机阿里买家版</a></span>
+										<span><a href="">手机阿里卖家版</a></span>
+										
+										<span><a href="">阿里贷款</a></span>
+										<span><a href="">阿里物流</a></span>
+										<span><a href="">商机助理</a></span>
+										<span><a href="">找货神器</a></span>
+										<span><a href="">服务市场</a></span>
+										<span><a href="">数字营销平台</a></span>
+										
+										<span><a href="">开放平台</a></span>
+										<span><a href="">八载</a></span>
+										<span><a href="">1688分销客</a></span>
+										
+										<span><a href="">社交分销</a></span>
+										<span><a href="">1688创易秀</a></span>
+										<span><a href="">店小蜜</a></span>
+										<span><a href="">社交分销</a></span>
+										<span><a href="">1688创易秀</a></span>
+										<span><a href="">店小蜜</a></span>
+										天工超级选型
+									</dd>
+								</dl>
+							</div>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="head_search"></div>
+			<div class="head_list"></div>
+		</header>
+	</body>
+	<script src="js/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</html>
