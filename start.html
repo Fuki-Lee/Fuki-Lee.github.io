@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人简历</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			header{
+				width: 100%;
+				height: 80px;
+				min-width: 1200px;
+			}
+			header::after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			header>div{
+				float: left;
+				margin-left: 30px;
+				text-align: center;
+				line-height: 80px;
+			}
+			header>.per_name{
+				font-size: 25px;
+				color: cadetblue;
+			}
+			header>.per_mail>span,header>.per_github>span,header>.WeChat>span{
+				font-size: 14px;
+				color: #555;
+			}
+			header>.per_mail>span:first-child,header>.per_github>span:first-child,header>.WeChat>span:first-child{
+				font-weight: bolder;
+				margin-right: 10px;
+				color: cadetblue;
+				font-size: 16px;
+			}
+			section{
+				width: 100%;
+				height: 500px;
+				/* background-color: #00ABF9; */
+				margin-top: 30px;
+				margin-left: 30px;
+			}
+			section>div{
+				margin-bottom: 10px;
+			}
+			section>.title_label{
+				font-weight: bolder;
+				text-align: left;
+			}
+			section>.section_container{
+				position: relative;
+				left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="per_name">李福子</div>
+			<!-- <div class="telephone">1576808068</div> -->
+			<div class="per_mail"><span>E-Mial:</span><span>Fuku_Lee@126.com</span></div>
+			<div class="per_github"><span>GitHub:</span><span>https://github.com/Fuki-Lee/Fuki-Lee.github.io</span></div>
+			<div class="WeChat"><span>WeChat:</span><span>wchat_FourKi</span></div>
+		</header>
+		<br/>
+		<hr color="cadetblue" font-size="2px"/>
+		<section>
+			<div class="title_label">负责的项目</div>
+			<div class="section_container">1688网购商城</div>
+			<div class="title_label">小组成员</div>
+			<div class="section_container">刘梦涛、滕运、张业明、李林、张耀</div>
+			<div class="title_label">负责内容</div>
+			<div class="section_container">1688网购商城主页部分。<br/>7-21的工作内容主要制作了网页头部，有一个小点，就是鼠标移入导航栏，导航栏的li左右需要出现边框样式。
+			<br/><span>具体解决方案：</span>
+				<br/>1. 初始状态的边框是由li>a标签的左边框带来的，并设置右边框的样式为1px，透明色，防止移入li标签的时候，li出现左右边框将导航栏整体宽度撑开，出现抖动现象。
+				<br/>2. 将各个li的margin往左调整1px，使得他们边框重叠。
+				<br/>3. 书写移入移出效果。当鼠标移入li的时候，去掉改li下a标签的边框，然后设置li边框颜色，并提高li的层级，提高层级是为了使得被盖住的右边框出现。当鼠标移除li的时候，恢复默认样式即可。
+			</div>
+			<div class="title_label">个人技能</div>
+			<div class="section_container">
+					Java
+					<br/>掌握编程语言Java，熟悉常见的算法和数据结构。熟练使用Java开发环境Eclipse及IDEA。
+					<br/>MySQL
+					<br/>熟悉MySQL，Oracle常用的关系数据库的使用和操作。
+					<br/>掌握基本的SQL语言，能够根据需求进行数据库设计。
+					<br/>Linux/Shell
+					<br/>熟悉常用的Linux命令，掌握基础的Shell脚本编程以及相关的编译命令。
+					<br/>能够编写简单的Shell脚本。能够在CentOS系统上部署Nginx、tomcat等常用web服务器。
+					<br/>HTML/CSS
+					<br/>掌握HTML/CSS，理解HTML语义化。熟练使用HTML、CSS和JavaScript进行Web前端开发。
+					<br/>掌握MUI及其他开源框架的使用方法，了解H5PLUS的基本使用。
+			</div>
+		</section>
+	</body>
+</html>
